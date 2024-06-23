@@ -1,3 +1,31 @@
+const nextConfig = {
+  /**
+   * Enable static exports for the App Router.
+   *
+   * @see https://nextjs.org/docs/app/building-your-application/deploying/static-exports
+   */
+  output: "export",
+
+  /**
+   * Set base path. This is the slug of your GitHub repository.
+   *
+   * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
+   */
+  basePath: "/ds510119.github.io",
+
+  /**
+   * Disable server-based image optimization. Next.js does not support
+   * dynamic features with static exports.
+   *
+   * @see https://nextjs.org/docs/app/api-reference/components/image#unoptimized
+   */
+  images: {
+    unoptimized: true,
+  },
+};
+
+export default nextConfig;
+
 const { withContentlayer } = require('next-contentlayer2')
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -60,7 +88,6 @@ const securityHeaders = [
 module.exports = () => {
   const plugins = [withContentlayer, withBundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), {
-    basePath: "/ds5105119.github.io",
     reactStrictMode: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {
