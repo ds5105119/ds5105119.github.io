@@ -2,6 +2,7 @@
   "name": "tailwind-nextjs-starter-blog",
   "version": "2.2.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "next dev",
     "dev": "cross-env INIT_CWD=$PWD next dev",
@@ -9,7 +10,7 @@
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
-    "prepare": "husky"
+    "prepare": "husky",
   },
   "dependencies": {
     "@headlessui/react": "1.7.19",
